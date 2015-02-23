@@ -1,0 +1,86 @@
+{
+    "id": "w20-business-theme",
+    "name": "W20 Business Theme",
+    "type": "theme",
+
+    "modules": {
+        "main": {
+            "path": "{w20-business-theme}/modules/main",
+            "autoload": true,
+            "configSchema": {
+                "title": "Business theme main module configuration",
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "sideMenuWidth": {
+                        "description": "Width of the side menu",
+                        "type": "integer"
+                    },
+                    "logoUrl": {
+                        "description": "URL for the top bar logo link",
+                        "type": "string"
+                    },
+                    "links": {
+                        "description": "Links to show directly in the top bar (up to 10 links)",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "label": {
+                                    "type": "string",
+                                    "description": "Link displayed text"
+                                },
+                                "i18n": {
+                                    "type": "string",
+                                    "description": "I18n key of the link displayed text"
+                                },
+                                "href": {
+                                    "type": "string",
+                                    "description": "URL of the link"
+                                },
+                                "target": {
+                                    "type": "string",
+                                    "description": "The target of the link"
+                                },
+                                "security": {
+                                    "type": "string",
+                                    "description": "The link display security expression"
+                                }
+                            }
+                        }
+                    },
+                    "hideBookmarks": {
+                        "description": "Hide the bookmarks menu",
+                        "type": "boolean"
+                    },
+                    "hideNotifications": {
+                        "description": "Hide the notifications menu",
+                        "type": "boolean"
+                    },
+                    "hideConnectivity": {
+                        "description": "Hide the connectivity indicator",
+                        "type": "boolean"
+                    },
+                    "hideCulture": {
+                        "description": "Hide the culture chooser",
+                        "type": "boolean"
+                    },
+                    "hideSecurity": {
+                        "description": "Hide the security status",
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "style": {
+            "path": "[css]!{w20-business-theme}/css/w20-business-theme.css",
+            "autoload": true
+        }
+    },
+
+    "i18n": {
+        "en": [ "{w20-business-theme}/i18n/messages-en.json" ],
+        "fr": [ "{w20-business-theme}/i18n/messages-fr.json" ]
+    }
+}

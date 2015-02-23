@@ -1,0 +1,25 @@
+{
+    "name": "w20-business-theme",
+    "version": "0.0.0",
+    "description": "W20 Business Theme",
+    "main": "gruntfile.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/seedstack/w20-business-theme.git"
+    },
+    "keywords": [
+        "w20",
+        "theme"
+    ],
+    "author": "Kavi Ramyead",
+    "license": "Mozilla Public License, version 2.0",
+    "bugs": {
+        "url": "https://github.com/seedstack/w20-business-theme/issues"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-less": "~0.11.0",
+        "grunt-contrib-watch": "~0.6.1",
+        "jit-grunt": "~0.7.0"
+    }
+}
