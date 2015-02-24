@@ -1,0 +1,32 @@
+{
+    "w20.menu.env.test" : "Test",
+    "w20.menu.env.dev" : "Development",
+    "w20.menu.env.preprod" : "Preproduction",
+    "w20.menu.env.prod" : "Production",
+
+    "w20.menu.sidebar.home" : "Home",
+    "w20.menu.sidebar.filter" : "Filter pages",
+    "w20.menu.sidebar.bookmarks" : "Bookmarks",
+    "w20.menu.sidebar.views" : "Pages",
+    "w20.menu.sidebar.searchEnter": "Press 'Enter' to go to first result",
+    "w20.menu.sidebar.collapse" : "Collapse",
+    "w20.menu.sidebar.expand" : "Expand",
+    "w20.menu.sidebar.add-bookmark": "Add an external bookmark",
+    "w20.menu.sidebar.remove-all-bookmarks": "Remove all bookmarks",
+    "w20.menu.sidebar.name": "Name",
+    "w20.menu.sidebar.url": "URL",
+    "w20.menu.sidebar.close": "Close",
+    "w20.menu.sidebar.add": "Add",
+    "w20.menu.sidebar.bookmark-exists": "Name already exists",
+    "w20.menu.sidebar.bookmark-name": "Name",
+    "w20.menu.sidebar.bookmark-date": "Date",
+    "w20.menu.sidebar.only-external": "External only",
+
+    "w20.menu.sidebar.notifications": "Notifications",
+    "w20.menu.sidebar.notifications.filter": "Filter notifications",
+    "w20.menu.sidebar.notifications.dismiss": "Dismiss",
+    "w20.menu.sidebar.notifications.dismiss-all": "Dismiss all",
+    "w20.menu.sidebar.notifications.today": "Today",
+    "w20.menu.sidebar.notifications.expand": "Expand",
+    "w20.menu.sidebar.notifications.collapse": "Collapse"
+}
