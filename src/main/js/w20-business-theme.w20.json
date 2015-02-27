@@ -76,6 +76,10 @@
         "style": {
             "path": "[css]!{w20-business-theme}/css/w20-business-theme.css",
             "autoload": true
+        },
+        "elegant-icon": {
+            "path": "[css]!{w20-business-theme}/css/fonts/elegant_font/style.css",
+            "autoload": true
         }
     },
 

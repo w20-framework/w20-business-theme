@@ -21,8 +21,8 @@ define([
         showTopbar = true,
         showSidebar = true;
 
-    w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EnvironmentService', 'DisplayService', 'MenuService',
-        function (applicationService, environmentService, displayService, menuService) {
+    w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EventService', 'EnvironmentService', 'DisplayService', 'MenuService',
+        function (applicationService, eventService, environmentService, displayService, menuService) {
         return {
             template: topbarTemplate,
             replace: true,
@@ -36,8 +36,12 @@ define([
                 scope.description = iAttrs.subtitle || '';
                 scope.logoUrl = _config.logoUrl;
 
-                scope.isTopbarDisplayed = function () {
+                scope.showTopbar = function () {
                     return showTopbar;
+                };
+
+                scope.toggleSidebar = function() {
+                    eventService.emit('SidebarToggleEvent');
                 };
 
                 displayService.registerContentShiftCallback(function () {
@@ -46,6 +50,107 @@ define([
             }
         };
     }]);
+
+    w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService',
+        function (eventService, displayService, navigationService, menuService) {
+            return {
+                template: sidebarTemplate,
+                replace: true,
+                restrict: 'A',
+                scope: true,
+                link: function (scope) {
+                    scope.sideMenuWidth = _config.sideMenuWidth;
+                    scope.menuSections = menuService.getSections;
+                    scope.menuActiveSectionName = scope.menuSections()[0];
+
+                    scope.showSidebar = function () {
+                        return showSidebar;
+                    };
+
+                    scope.menuSection = function (name) {
+                        return name ? menuService.getSection(name) : null;
+                    };
+
+                    eventService.on('SidebarToggleEvent', function() {
+                        showSidebar = !showSidebar;
+                        displayService.computeContentShift();
+                    });
+
+                    displayService.registerContentShiftCallback(function () {
+                        return [10, 0, 0, showSidebar ? 270 : 0];
+                    });
+                }
+            };
+    }]);
+
+    w20BusinessTheme.filter('routeFilter', ['CultureService', 'SecurityExpressionService', function(cultureService, securityExpressionService) {
+        function isRouteVisible(route) {
+            return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
+        }
+        return function(routes, expected) {
+            if (!expected) {
+                return;
+            }
+            return _.filter(routes, function(route) {
+                if(isRouteVisible(route) && cultureService.displayName(route).toLowerCase().indexOf(expected.toLowerCase()) !== -1) {
+                    return route;
+                }
+            });
+        };
+    }]);
+
+
+    w20BusinessTheme.controller('ViewsController', ['$scope', 'NavigationService', 'CultureService', '$route', '$location',
+        function ($scope, navigationService, cultureService, $route, $location) {
+
+            var openedCategories = navigationService.expandedRouteCategories();
+
+            function recursiveOpen(tree) {
+                openedCategories.push(tree.categoryName);
+                for (var key in tree) {
+                    if (tree.hasOwnProperty(key)) {
+                        var subTree = tree[key];
+                        if (subTree instanceof Array) {
+                            recursiveOpen(subTree);
+                        }
+                    }
+                }
+            }
+
+            $scope.routes = $route.routes;
+            $scope.filteredRoutes = [];
+            $scope.menuTree = navigationService.routeTree;
+            $scope.subMenuTree = navigationService.computeSubTree;
+            $scope.topLevelCategories = navigationService.topLevelRouteCategories;
+            $scope.topLevelRoutes = navigationService.topLevelRoutes;
+            $scope.routesFromCategory = navigationService.routesFromCategory;
+            $scope.displayName = cultureService.displayName;
+
+            $scope.localizeCategory = function (categoryName) {
+                var lastPartIndex = categoryName.lastIndexOf('.');
+                if (lastPartIndex !== -1) {
+                    return cultureService.localize('application.viewcategory.' + categoryName, undefined, null) || cultureService.localize('application.viewcategory.' + categoryName.substring(lastPartIndex + 1));
+                } else {
+                    return cultureService.localize('application.viewcategory.' + categoryName);
+                }
+            };
+
+            $scope.toggleTree = function (tree) {
+                if ($scope.isOpened(tree.categoryName)) {
+                    openedCategories.splice(openedCategories.indexOf(tree.categoryName), 1);
+                } else {
+                    openedCategories.push(tree.categoryName);
+                }
+            };
+
+            $scope.isOpened = function (categoryName) {
+                return _.contains(openedCategories, categoryName);
+            };
+
+            $scope.routeSortKey = function (route) {
+                return route.sortKey || route.path;
+            };
+        }]);
 
     w20BusinessTheme.run(['$rootScope', 'EventService', 'DisplayService', 'MenuService',
         function ($rootScope, eventService, displayService, menuService) {
@@ -114,6 +219,10 @@ define([
                     sortKey: 1000
                 });
             }
+
+            menuService.addSection('views', 'w20-views', {
+                templateUrl: '{w20-business-theme}/templates/sidebar-views.html'
+            });
 
             eventService.on('w20.security.authenticated', function () {
                 displayService.computeContentShift();
