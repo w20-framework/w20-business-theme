@@ -1,6 +1,6 @@
 @import 'variables';
 
-.w20-content {
+html {
 
   // Buttons
   // --------------------------------------------------
@@ -77,8 +77,6 @@
     }
   }
 
-
-
   // Input
   // --------------------------------------------------
 
@@ -126,7 +124,6 @@
     font-size: 100%;
     color: @dark-grey;
   }
-
 
   // Alert
   // --------------------------------------------------
@@ -210,11 +207,7 @@
         color: @dark-grey;
       }
     }
-
-
-
   }
-
 
   // Panel
   // --------------------------------------------------
@@ -273,5 +266,23 @@
     }
   }
 
+  // Modal (outisde of w20-content namespace)
+  // --------------------------------------------------
 
+  .modal-header {
+    font-family: @main-font;
+    color: @dark-grey;
+    background-color: @snow-white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid @pale-grey;
+  }
+
+  .modal-footer {
+    font-family: @main-font;
+    color: @dark-grey;
+    background-color: @snow-white;
+    border-top: 1px solid @pale-grey;
+  }
 }
+
