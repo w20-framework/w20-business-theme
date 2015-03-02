@@ -77,7 +77,7 @@ define([
                     });
 
                     displayService.registerContentShiftCallback(function () {
-                        return [10, 0, 0, showSidebar ? 270 : 0];
+                        return [10, 0, 0, showSidebar ? (scope.sideMenuWidth || 270) : 0];
                     });
                 }
             };
@@ -160,7 +160,6 @@ define([
         function ($rootScope, eventService, displayService, menuService) {
 
             $rootScope.$on('$routeChangeSuccess', function (event, routeInfo) {
-
 
                 if (routeInfo && routeInfo.$$route) {
                     switch (routeInfo.$$route.navigation) {
