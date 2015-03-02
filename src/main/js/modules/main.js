@@ -126,6 +126,10 @@ define([
             $scope.routesFromCategory = navigationService.routesFromCategory;
             $scope.displayName = cultureService.displayName;
 
+            $scope.activeRoutePath = function() {
+               return $location.path();
+            };
+
             $scope.localizeCategory = function (categoryName) {
                 var lastPartIndex = categoryName.lastIndexOf('.');
                 if (lastPartIndex !== -1) {
@@ -156,6 +160,8 @@ define([
         function ($rootScope, eventService, displayService, menuService) {
 
             $rootScope.$on('$routeChangeSuccess', function (event, routeInfo) {
+
+
                 if (routeInfo && routeInfo.$$route) {
                     switch (routeInfo.$$route.navigation) {
                         case 'none':

@@ -2,11 +2,18 @@
     <ul class="sidebar-list">
         <!-- home route -->
         <li class="menu-route category">
-            <i class="fa fa-home"></i><a data-ng-href="#!"> {{ 'w20.menu.sidebar.home' | localize }}</a>
+            <div data-ng-class="{'active-route': activeRoute.path === '/'}">
+                <a data-ng-href="#!">
+                    <i class="fa fa-home"></i>
+                    {{ 'w20.menu.sidebar.home' | localize | uppercase }}
+                </a>
+            </div>
         </li>
         <!-- route without categories -->
-        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" class="menu-route category">
-            <a data-ng-href="#!{{ route.path }}" target="{{ route.target || '_self' }}" data-ng-bind-html="displayName(route)"></a>
+        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" class="menu-route single-route">
+            <div class="route-wrapper" data-ng-class="{'active-route': activeRoutePath() === route.path}">
+                <a data-ng-href="#!{{ route.path }}" target="{{ route.target || '_self' }}" data-ng-bind-html="displayName(route)"></a>
+            </div>
         </li>
         <!-- route in categories -->
         <li data-ng-repeat="category in topLevelCategories()">
@@ -26,7 +33,7 @@
     </ul>
     <!-- Recursive template-->
     <script type="text/ng-template" id="subtree.html">
-        <li>
+        <li data-ng-class="{'active-route': activeRoutePath() === subTree.path}">
             <div data-ng-if="subTree.categoryName" data-ng-click="toggleTree(subTree)" class="subcategory">
                  <span>
                     {{ localizeCategory(subTree.categoryName) }}
@@ -34,13 +41,13 @@
                  <i class="pull-right" data-ng-class="{true:'fa fa-caret-down', false:'fa fa-caret-left'}[isOpened(subTree.categoryName)]"></i>
             </div>
 
-            <!-- leaf routes of nested categories -->
-            <span data-ng-if="subTree.path" class="menu-route">
+            <!-- leaf route of nested categories -->
+            <div data-ng-if="subTree.path" class="menu-route">
                 <a data-ng-href="#!{{ subTree.path }}"
                    target="{{ subTree.target || '_self' }}"
                    data-ng-bind-html="displayName(subTree)">
                 </a>
-            </span>
+            </div>
 
             <div data-ng-show="isOpened(subTree.categoryName)">
                 <ul class="subtree"
