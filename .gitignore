@@ -1,2 +1,6 @@
+css/w20-business-theme.css
 .idea
-src/node_modules
+node_modules
+bower_modules
+*.iml
+*~

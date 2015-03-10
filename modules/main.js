@@ -2,13 +2,13 @@ define([
     'require',
     'module',
 
-    '{w20-core}/libext/lodash/lodash',
-    '{w20-core}/libext/angular/angular',
+    '{lodash}/lodash',
+    '{angular}/angular',
 
     '[text]!{w20-business-theme}/templates/topbar.html',
     '[text]!{w20-business-theme}/templates/sidebar.html',
 
-    '{w20-core}/libext/angular/angular-sanitize',
+    '{angular-sanitize}/angular-sanitize',
     '{w20-ui}/modules/ui',
     '{w20-ui}/modules/notifications',
     '{w20-core}/modules/culture',
@@ -16,7 +16,7 @@ define([
 ], function(require, module, _, angular, topbarTemplate, sidebarTemplate) {
     'use strict';
 
-    var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20UI', 'w20UINotifications', 'ngSanitize', 'ui.bootstrap']),
+    var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20UI', 'w20UINotifications', 'ngSanitize']),
         _config = module && module.config() || {},
         showTopbar = true,
         showSidebar = true;

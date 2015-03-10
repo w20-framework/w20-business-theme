@@ -5,20 +5,15 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         less: {
-            development: {
-                options: {
-                    compress: true,
-                    yuicompress: true,
-                    optimization: 2
-                },
+            production: {
                 files: {
-                    'main/js/css/w20-business-theme.css': 'less/main.less'
+                    'css/w20-business-theme.css': 'less/main.less'
                 }
             }
         },
         watch: {
             styles: {
-                files: ['less/**/*.less'],
+                files: ['less/*.less'],
                 tasks: ['less'],
                 options: {
                     nospawn: true
@@ -27,5 +22,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['less', 'watch']);
+    grunt.registerTask('default', ['less']);
 };
