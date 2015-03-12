@@ -23,7 +23,9 @@
                     <a class="logo" data-ng-href="{{logoUrl}}" data-tooltip="{{ logoUrl }}" data-tooltip-placement="bottom"></a>
                     <div class="w20bt-topbar-actions">
                         <ul class="nav navbar-nav">
-                            <li class="w20bt-sidemenu-toggler" data-ng-click="toggleSidebar()"></li>
+                            <li class="w20bt-sidemenu-toggler" data-ng-click="toggleSidebar()">
+                                <i class="fa fa-reorder"></i>
+                            </li>
                             <li data-ng-repeat="navActionName in navActions()"
                                 data-ng-include="navAction(navActionName).templateUrl | path"
                                 data-w20-include-replace
