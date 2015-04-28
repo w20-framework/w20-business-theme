@@ -1,8 +1,13 @@
-@import url(http://fonts.googleapis.com/css?family=Arimo);
 @font-face {
   font-family: 'Collator';
   src: url('../fonts/collator/Collator-webfont.eot');
   src: url('../fonts/collator/Collator-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/collator/Collator-webfont.woff2') format('woff2'), url('../fonts/collator/Collator-webfont.woff') format('woff'), url('../fonts/collator/Collator-webfont.ttf') format('truetype'), url('../fonts/collator/Collator-webfont.svg#collatorregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Arimo';
+  src: url('../fonts/arimo/Arimo-Regular.woff2') format('woff2'), url('../fonts/arimo/Arimo-Regular.woff') format('woff'), url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -345,6 +350,11 @@ html .modal-footer {
 .w20-topbar {
   font-family: 'Arimo';
 }
+.w20-topbar .navbar-default .navbar-nav > .open > a,
+.w20-topbar .navbar-default .navbar-nav > .open > a:hover,
+.w20-topbar .navbar-default .navbar-nav > .open > a:focus {
+  border-top: 1px solid #dddddd;
+}
 .w20-topbar .w20bt-no-x-padding {
   padding-left: 0;
   padding-right: 0;
@@ -357,6 +367,13 @@ html .modal-footer {
 }
 .w20-topbar .w20bt-brand .w20bt-brand-id {
   padding: 13px 20px 0 20px;
+}
+.w20-topbar .w20bt-brand .w20bt-brand-id--fixed {
+  padding: 13px 20px 0 20px;
+  width: 270px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .w20-topbar .w20bt-brand .w20bt-brand-title {
   font-family: 'Collator', arial, helvetica, sans-serif;
@@ -381,6 +398,9 @@ html .modal-footer {
 .w20-topbar .w20bt-sidemenu-toggler:hover {
   color: #4d4d4d;
 }
+.w20-topbar .w20bt-sidemenu-toggler--small {
+  display: none;
+}
 .w20-topbar > .navbar {
   border-bottom: none;
 }
@@ -389,6 +409,9 @@ html .modal-footer {
   border-bottom: 1px solid #dddddd;
 }
 @media (min-width: 768px) and (max-width: 980px) {
+  .w20bt-sidemenu-toggler--small {
+    display: none;
+  }
   .w20-topbar .w20bt-brand-description,
   .w20-topbar .w20bt-brand-env {
     display: none;
@@ -399,20 +422,27 @@ html .modal-footer {
   }
 }
 @media (min-width: 768px) {
+  .w20bt-sidemenu-toggler--small {
+    display: none;
+  }
   .w20bt-topbar-actions {
     max-height: 60px;
   }
   .w20bt-topbar-actions .navbar-nav > li:not(.w20bt-sidemenu-toggler) {
     margin-top: 18px;
     height: 25px;
-    border-right: 1px solid #bababa;
+  }
+  .w20bt-topbar-actions .topbar-action-separator {
+    border-left: 1px solid #bababa;
   }
   .w20bt-topbar-actions .navbar-nav > li > a {
     padding: 2px 20px;
     cursor: pointer;
   }
+  .w20bt-topbar-actions .dropdown-menu {
+    width: 100%;
+  }
   .w20bt-topbar-actions a.dropdown-toggle {
-    height: 62px;
     cursor: pointer;
   }
   .w20bt-topbar-actions .dropdown-menu a {
@@ -420,6 +450,18 @@ html .modal-footer {
   }
 }
 @media (max-width: 768px) {
+  .w20bt-sidemenu-toggler--small {
+    cursor: pointer;
+    height: 60px;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    display: block !important;
+    border-right: none;
+  }
+  .w20bt-sidemenu-toggler--small:hover {
+    color: #ffffff;
+  }
   .w20-topbar .w20bt-brand {
     width: 100%;
     padding-left: 10px;
@@ -430,6 +472,9 @@ html .modal-footer {
   }
   .w20-topbar .navbar-header .w20bt-brand {
     margin-left: 0;
+  }
+  .w20-topbar .w20bt-sidemenu-toggler {
+    height: 20px;
   }
   .w20-topbar .w20bt-topbar-actions {
     height: auto;
@@ -478,6 +523,10 @@ html .modal-footer {
   background-color: #4d4d4d;
   border-left: 5px solid #72b0dd;
   padding: 5px;
+  transition: background 0.5s;
+}
+.w20bt-sidebar-views .sidebar-list .menu-route:hover {
+  cursor: pointer;
 }
 .w20bt-sidebar-views .sidebar-list .menu-route:hover a {
   color: #ffffff;

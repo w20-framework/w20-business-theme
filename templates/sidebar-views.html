@@ -1,8 +1,8 @@
-<nav data-ng-controller="ViewsController" class="w20bt-sidebar-views">
+<nav data-ng-controller="W20btViewsController" class="w20bt-sidebar-views">
     <ul class="sidebar-list">
         <!-- home route -->
-        <li class="menu-route category">
-            <div data-ng-class="{'active-route': activeRoute.path === '/'}">
+        <li class="menu-route single-route">
+            <div data-ng-class="{'active-route': activeRoutePath() === '/'}" data-ng-style="{'border-color': brandColor}">
                 <a data-ng-href="#!/">
                     <i class="fa fa-home"></i>
                     {{ 'w20.menu.sidebar.home' | localize | uppercase }}
@@ -10,9 +10,9 @@
             </div>
         </li>
         <!-- route without categories -->
-        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" class="menu-route single-route">
-            <div class="route-wrapper" data-ng-class="{'active-route': activeRoutePath() === route.path}">
-                <a data-ng-href="#!{{ route.path }}" target="{{ route.target || '_self' }}" data-ng-bind-html="displayName(route)"></a>
+        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" data-ng-click="goTo(route.path)" class="menu-route single-route">
+            <div class="route-wrapper" data-ng-class="{'active-route': activeRoutePath() === route.path}" data-ng-style="{'border-color': brandColor}">
+                <a target="{{ route.target || '_self' }}" data-ng-bind-html="displayName(route)"></a>
             </div>
         </li>
         <!-- route in categories -->
@@ -33,7 +33,7 @@
     </ul>
     <!-- Recursive template-->
     <script type="text/ng-template" id="subtree.html">
-        <li data-ng-class="{'active-route': activeRoutePath() === subTree.path}">
+        <li data-ng-class="{'active-route': activeRoutePath() === subTree.path}" data-ng-style="{'border-color': brandColor}">
             <div data-ng-if="subTree.categoryName" data-ng-click="toggleTree(subTree)" class="subcategory">
                  <span>
                     {{ localizeCategory(subTree.categoryName) }}
