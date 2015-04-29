@@ -35,6 +35,12 @@ define([
                 scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
                 scope.description = iAttrs.subtitle || '';
                 scope.logoUrl = _config.logoUrl;
+                scope.brandFixedWidth = true;
+                if (_config.brand) {
+                    scope.brandFixedWidth = _config.brand.fixedWidth === false ? _config.brand.fixedWidth : true;
+                    scope.brandBackgroundColor = _config.brand.backgroundColor ?  _config.brand.backgroundColor : undefined;
+                    scope.brandTextColor = _config.brand.textColor ?  _config.brand.textColor : undefined;
+                }
 
                 scope.showTopbar = function () {
                     return showTopbar;
@@ -51,15 +57,19 @@ define([
         };
     }]);
 
-    w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService',
-        function (eventService, displayService, navigationService, menuService) {
+    w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService', '$location',
+        function (eventService, displayService, navigationService, menuService, $location) {
             return {
                 template: sidebarTemplate,
                 replace: true,
                 restrict: 'A',
                 scope: true,
-                link: function (scope) {
-                    scope.sideMenuWidth = _config.sideMenuWidth;
+                link: function (scope, element) {
+
+                    if (_config.sidebar) {
+                        scope.sideBarWidth = _config.sidebar.width ? _config.sidebar.width : undefined;
+                    }
+
                     scope.menuSections = menuService.getSections;
                     scope.menuActiveSectionName = scope.menuSections()[0];
 
@@ -71,13 +81,17 @@ define([
                         return name ? menuService.getSection(name) : null;
                     };
 
+                    scope.goTo = function(path) {
+                        $location.path(path);
+                    };
+
                     eventService.on('SidebarToggleEvent', function() {
                         showSidebar = !showSidebar;
                         displayService.computeContentShift();
                     });
 
                     displayService.registerContentShiftCallback(function () {
-                        return [10, 0, 0, showSidebar ? (scope.sideMenuWidth || 270) : 0];
+                        return [10, 0, 0, showSidebar ? (scope.sideBarWidth || 270) : 0];
                     });
                 }
             };
@@ -99,8 +113,7 @@ define([
         };
     }]);
 
-
-    w20BusinessTheme.controller('ViewsController', ['$scope', 'NavigationService', 'CultureService', '$route', '$location',
+    w20BusinessTheme.controller('W20btViewsController', ['$scope', 'NavigationService', 'CultureService', '$route', '$location',
         function ($scope, navigationService, cultureService, $route, $location) {
 
             var openedCategories = navigationService.expandedRouteCategories();
@@ -125,6 +138,10 @@ define([
             $scope.topLevelRoutes = navigationService.topLevelRoutes;
             $scope.routesFromCategory = navigationService.routesFromCategory;
             $scope.displayName = cultureService.displayName;
+
+            if (_config.brand) {
+                $scope.brandColor =  _config.brand.backgroundColor ? _config.brand.backgroundColor : undefined;
+            }
 
             $scope.activeRoutePath = function() {
                return $location.path();

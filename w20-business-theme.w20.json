@@ -12,9 +12,35 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "sideMenuWidth": {
-                        "description": "Width of the side menu",
-                        "type": "integer"
+                    "sidebar": {
+                        "title": "Sidebar configuration",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "width": {
+                                "description": "Width of the side menu",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "brand": {
+                        "title": "Topbar brand (application title) configuration",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "fixedWidth": {
+                                "description": "If true, the brand name size will not exceed the default sidebar width",
+                                "type": "boolean"
+                            },
+                            "backgroundColor": {
+                                "description": "Set the color of the brand background",
+                                "type": "string"
+                            },
+                            "textColor": {
+                                "description": "Set the color of the brand text",
+                                "type": "string"
+                            }
+                        }
                     },
                     "logoUrl": {
                         "description": "URL for the top bar logo link",
