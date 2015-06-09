@@ -195,8 +195,6 @@ define([
                         case 'full':
                         /* falls through */
                         default:
-                            showSidebar = true;
-                            showTopbar = true;
                             break;
                     }
 
