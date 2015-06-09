@@ -57,14 +57,15 @@ define([
         };
     }]);
 
-    w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService', '$location',
-        function (eventService, displayService, navigationService, menuService, $location) {
+    w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService', '$location', '$window',
+        function (eventService, displayService, navigationService, menuService, $location, $window) {
             return {
                 template: sidebarTemplate,
                 replace: true,
                 restrict: 'A',
                 scope: true,
-                link: function (scope, element) {
+                link: function (scope) {
+                    var previousSidebarState = showSidebar;
 
                     if (_config.sidebar) {
                         scope.sideBarWidth = _config.sidebar.width ? _config.sidebar.width : undefined;
@@ -87,11 +88,18 @@ define([
 
                     eventService.on('SidebarToggleEvent', function() {
                         showSidebar = !showSidebar;
+                        previousSidebarState = showSidebar;
                         displayService.computeContentShift();
                     });
 
                     displayService.registerContentShiftCallback(function () {
                         return [10, 0, 0, showSidebar ? (scope.sideBarWidth || 270) : 0];
+                    });
+
+                    angular.element($window).bind('resize', function () {
+                        showSidebar = $(window).width() < 768 ? false : previousSidebarState;
+                        scope.$apply();
+                        displayService.computeContentShift();
                     });
                 }
             };
