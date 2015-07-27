@@ -3,4 +3,4 @@
 
 W20 business-oriented theme
 
-Implementation of [PEP 001](https://github.com/seedstack/project-enhancement-proposals/blob/master/seedstack_pep_001_w20_business_clean_theme.md)
+Implementation of [PEP 001](https://github.com/seedstack/project-enhancement-proposals/blob/master/pep-001-w20-business-theme.md)
