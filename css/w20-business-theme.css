@@ -188,16 +188,6 @@ html .dropdown-submenu:hover > a {
   background-color: #428bca;
   color: #ffffff;
 }
-html .btn .caret {
-  display: inline;
-  border: none;
-}
-html .btn .caret:before {
-  font-family: 'ElegantIcons';
-  content: "\33";
-  font-size: 100%;
-  color: #666666;
-}
 html .alert {
   border: none;
   border-radius: 0;

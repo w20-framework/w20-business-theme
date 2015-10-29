@@ -2,6 +2,7 @@ define([
     'require',
     'module',
 
+    'jquery',
     '{lodash}/lodash',
     '{angular}/angular',
 
@@ -9,14 +10,14 @@ define([
     '[text]!{w20-business-theme}/templates/sidebar.html',
 
     '{angular-sanitize}/angular-sanitize',
-    '{w20-ui}/modules/ui',
-    '{w20-ui}/modules/notifications',
+    '{w20-core}/modules/ui',
+    '{w20-core}/modules/notifications',
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils'
-], function(require, module, _, angular, topbarTemplate, sidebarTemplate) {
+], function(require, module, $, _, angular, topbarTemplate, sidebarTemplate) {
     'use strict';
 
-    var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20UI', 'w20UINotifications', 'ngSanitize']),
+    var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20CoreUI', 'w20CoreNotifications', 'ngSanitize']),
         _config = module && module.config() || {},
         showTopbar = true,
         showSidebar = true;
