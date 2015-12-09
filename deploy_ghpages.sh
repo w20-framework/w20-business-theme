@@ -11,10 +11,9 @@
 
 
 (
-	git init
 	git config user.name "Travis-CI"
 	git config user.email "travis@seedstack.org"
 	git add .
 	git commit -m "Built for gh-pages of http://seedstack.github.io/w20-business-theme"
-	git push --force "https://${GITHUB_TOKEN}@github.com/seedstack/w20-business-theme" master:gh-pages
+	git push --force "https://${GITHUB_TOKEN}@github.com/seedstack/w20-business-theme" demo:gh-pages
 )
