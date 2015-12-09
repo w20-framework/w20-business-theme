@@ -12,4 +12,4 @@ install:
 script: grunt
 
 after_success:
-  - "[[ $TRAVIS_PULL_REQUEST == \"false\" && $TRAVIS_BRANCH == \"master\" ]] && chmod +x deploy_ghpages.sh && ./deploy_ghpages.sh"
+  - "[[ $TRAVIS_PULL_REQUEST == \"false\" && $TRAVIS_BRANCH == \"demo\" ]] && chmod +x deploy_ghpages.sh && ./deploy_ghpages.sh"
