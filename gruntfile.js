@@ -2,6 +2,9 @@ module.exports = function(grunt) {
     'use strict';
 
     grunt.initConfig({
+        clean: [
+            'bower_components/**'
+        ],
         bower: {
             install: {
                 options: {
@@ -21,7 +24,9 @@ module.exports = function(grunt) {
     });
 
     grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+
     grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask('default', ['bower']);
+    grunt.registerTask('default', ['clean', 'bower']);
 };

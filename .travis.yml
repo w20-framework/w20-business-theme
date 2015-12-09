@@ -7,7 +7,7 @@ node_js:
 
 install: 
   - npm install -g grunt-cli
-  - npm install grunt grunt-bower-task
+  - npm install grunt grunt-contrib-clean grunt-bower-task
 
 script: grunt
 
