@@ -1,28 +1,11 @@
 {
-    "name": "w20-business-theme",
-    "version": "1.0.0-M2",
-    "description": "W20 Business Theme",
-    "main": "gruntfile.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/seedstack/w20-business-theme.git"
-    },
-    "keywords": [
-        "w20",
-        "theme"
-    ],
-    "author": "Kavi Ramyead",
-    "license": "Mozilla Public License, version 2.0",
-    "bugs": {
-        "url": "https://github.com/seedstack/w20-business-theme/issues"
-    },
-    "scripts": {
-        "test": ""
-    },
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-less": "~1.0.0",
-        "grunt-contrib-watch": "~0.6.1",
-        "jit-grunt": "~0.9.1"
-    }
+  "name": "w20-business-theme-demo",
+  "version": "0.1.0",
+  "description": "A demo app for the business theme",
+  "author": "Kavi RAMYEAD",
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-connect": "~0.10.1",
+    "grunt-bower-task": "~0.4"
+  }
 }

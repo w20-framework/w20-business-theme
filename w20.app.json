@@ -1,0 +1,40 @@
+{
+    "w20-business-theme-demo/w20-business-theme-demo.w20.json": {},
+
+    "bower_components/w20/w20-core.w20.json": {
+        "modules": {
+            "application": {
+                "id": "w20-business-theme-demo",
+                "home": "/w20-business-theme-demo/content",
+                "blank": "/blank",
+                "notFound": "/not-found",
+                "redirectAfterRouteError": "/error"
+            },
+            "culture": {
+                "available": [
+                    "en",
+                    "fr"
+                ],
+                "default": "en"
+            },
+            "env": {
+                "type": "test"
+            },
+            "security": {
+                "autoLogin": true,
+                "redirectAfterLogout": "/",
+                "redirectAfterLogin": "/",
+                "persistentRestrictions": false
+            }
+        }
+    },
+
+
+    "bower_components/w20-bootstrap-3/w20-bootstrap-3.w20.json": {},
+
+    "bower_components/w20-business-theme/w20-business-theme.w20.json": {
+        "modules": {
+            "main": {}
+        }
+    }
+}

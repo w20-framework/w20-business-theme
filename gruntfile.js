@@ -1,26 +1,27 @@
 module.exports = function(grunt) {
     'use strict';
 
-    require('jit-grunt')(grunt);
-
     grunt.initConfig({
-        less: {
-            production: {
-                files: {
-                    'css/w20-business-theme.css': 'less/main.less'
+        bower: {
+            install: {
+                options: {
+                    copy: false
                 }
             }
         },
-        watch: {
-            styles: {
-                files: ['less/*.less'],
-                tasks: ['less'],
+        connect: {
+            server: {
                 options: {
-                    nospawn: true
+                    port: grunt.option('port') || 9999,
+                    base: '.',
+                    keepalive: true
                 }
             }
         }
     });
 
-    grunt.registerTask('default', ['less']);
+    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.registerTask('default', ['bower']);
 };

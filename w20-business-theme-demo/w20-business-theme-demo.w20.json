@@ -1,0 +1,27 @@
+{
+    "id": "w20-business-theme-demo",
+    "name": "W20 business Theme Demo",
+
+    "modules": {
+        "content": {
+            "path": "{w20-business-theme-demo}/modules/content",
+            "autoload": true
+        },
+        "style": {
+            "path": "[css]!{w20-business-theme-demo}/style/style.css",
+            "autoload": true
+        }
+    },
+
+    "i18n": {
+        "en": ["{w20-business-theme-demo}/i18n/messages-en.json"],
+        "fr": ["{w20-business-theme-demo}/i18n/messages-fr.json"]
+    },
+
+    "routes": {
+        "content":{
+            "templateUrl":"{w20-business-theme-demo}/views/content.html",
+            "controller":"ContentController"
+        }
+    }
+}

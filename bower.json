@@ -1,18 +1,9 @@
 {
-  "name": "w20-business-theme",
-  "version": "1.1.1",
-  "ignore": [
-    ".*",
-    "*.iml",
-    "*.md",
-    "bower_components",
-    "coverage",
-    "node_modules",
-    "gruntfile.js",
-    "package.json"
-  ],
+  "name": "w20-business-theme-demo",
+  "version": "1.0.0",
   "dependencies": {
-    "w20": "~2.1",
-    "w20-bootstrap-3": "~2.1"
+    "w20": "latest",
+    "w20-business-theme": "latest",
+    "w20-bootstrap-3": "latest"
   }
 }
