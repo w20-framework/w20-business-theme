@@ -11,9 +11,17 @@
 
 
 (
+    mkdir build
+    cp -r bower_components build/
+    cp -r w20-business-theme-demo build/
+    cp index.html build/
+    cp w20.app.json build/
+    cd build
+    git init
 	git config user.name "Travis-CI"
 	git config user.email "travis@seedstack.org"
 	git add .
+	git add bower_components -f
 	git commit -m "Built for gh-pages of http://seedstack.github.io/w20-business-theme"
-	git push --force --quiet "https://${GITHUB_TOKEN}@github.com/seedstack/w20-business-theme" demo:gh-pages > /dev/null 2>&1
+	git push --force "https://${GITHUB_TOKEN}@github.com/seedstack/w20-business-theme" master:gh-pages
 )

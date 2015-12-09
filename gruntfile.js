@@ -25,7 +25,6 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-bower-task');
     grunt.loadNpmTasks('grunt-contrib-clean');
-
     grunt.loadNpmTasks('grunt-contrib-connect');
 
     grunt.registerTask('default', ['clean', 'bower']);
