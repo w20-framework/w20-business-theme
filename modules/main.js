@@ -20,7 +20,7 @@ define([
     var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20CoreUI', 'w20CoreNotifications', 'ngSanitize']),
         _config = module && module.config() || {},
         showTopbar = true,
-        showSidebar = true;
+        showSidebar = _config.sidebar && typeof _config.sidebar.show == 'boolean' ? _config.show : true;
 
     w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EventService', 'EnvironmentService', 'DisplayService', 'MenuService',
         function (applicationService, eventService, environmentService, displayService, menuService) {
@@ -30,6 +30,19 @@ define([
             restrict: 'A',
             scope: true,
             link: function (scope, iElement, iAttrs) {
+
+                //debug
+
+                scope.tests = [
+                    { name: 'toto1', surname: 'tata1 '},
+                    { name: 'toto2', surname: 'tata2 '},
+                    { name: 'toto3', surname: 'tata3 '},
+                    { name: 'toto4', surname: 'tata4 '}
+                ];
+
+                //end debug
+
+
                 scope.navActions = menuService.getActions;
                 scope.navAction = menuService.getAction;
                 scope.envtype = environmentService.environment;
@@ -182,8 +195,8 @@ define([
             };
         }]);
 
-    w20BusinessTheme.run(['$rootScope', 'EventService', 'DisplayService', 'MenuService',
-        function ($rootScope, eventService, displayService, menuService) {
+    w20BusinessTheme.run(['$rootScope', 'EventService', 'DisplayService', 'MenuService', 'CultureService',
+        function ($rootScope, eventService, displayService, menuService, cultureService) {
 
             $rootScope.$on('$routeChangeSuccess', function (event, routeInfo) {
 
