@@ -1,0 +1,20 @@
+{
+  "w20.bs3.datepicker.today": "Today",
+  "w20.bs3.datepicker.clear": "Clear",
+  "w20.bs3.datepicker.close": "Done",
+
+  "w20.bs3.action.login" : "Login",
+  "w20.bs3.action.logout" : "Logout",
+  "w20.bs3.action.connectivity.unknown": "Unknown connectivity",
+  "w20.bs3.action.connectivity.online": "Online",
+  "w20.bs3.action.connectivity.offline": "Offline",
+  "w20.bs3.action.profile.restrict-roles": "Restrict roles to:",
+  "w20.bs3.action.profile.restrict-attributes": "Restrict attributes to:",
+  "w20.bs3.action.profile.title": "User roles and attributes",
+
+  "w20.bs3.error-report.title": "Error reporting",
+  "w20.bs3.error-report.message": "Message",
+  "w20.bs3.error-report.location": "Location",
+  "w20.bs3.error-report.cause": "Cause",
+  "w20.bs3.error-report.dismiss": "Dismiss"
+}

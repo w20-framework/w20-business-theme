@@ -1,0 +1,28 @@
+{
+  "name": "w20-business-theme",
+  "version": "1.1.2",
+  "ignore": [
+    ".*",
+    "*.iml",
+    "*.md",
+    "bower_components",
+    "coverage",
+    "node_modules",
+    "gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "w20": "~2.1",
+    "w20-bootstrap-3": "~2.1"
+  },
+  "homepage": "https://github.com/seedstack/w20-business-theme",
+  "_release": "1.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.2",
+    "commit": "ca85878c5d9f89b65ae55b636284c7948d2111b2"
+  },
+  "_source": "git://github.com/seedstack/w20-business-theme.git",
+  "_target": "*",
+  "_originalSource": "w20-business-theme"
+}

@@ -1,0 +1,33 @@
+{
+    "w20.menu.env.test" : "Test",
+    "w20.menu.env.dev" : "Développement",
+    "w20.menu.env.preprod" : "Préproduction",
+    "w20.menu.env.prod" : "Production",
+
+    "w20.menu.sidebar.home" : "Accueil",
+    "w20.menu.sidebar.filter" : "Filtrer les pages",
+    "w20.menu.sidebar.bookmarks" : "Favoris",
+    "w20.menu.sidebar.views" : "Pages",
+    "w20.menu.sidebar.searchEnter": "\"Entrée\" pour aller au premier résultat",
+    "w20.menu.sidebar.collapse" : "Réduire",
+    "w20.menu.sidebar.expand" : "Développer",
+    "w20.menu.sidebar.add-bookmark": "Ajouter un favori externe",
+    "w20.menu.sidebar.remove-all-bookmarks": "Supprimer tout les favoris",
+    "w20.menu.sidebar.name": "Nom",
+    "w20.menu.sidebar.url": "URL",
+    "w20.menu.sidebar.close": "Fermer",
+    "w20.menu.sidebar.add": "Ajout",
+    "w20.menu.sidebar.bookmark-exists": "Le nom existe déjà",
+    "w20.menu.sidebar.bookmark-name": "Nom",
+    "w20.menu.sidebar.bookmark-date": "Date",
+    "w20.menu.sidebar.only-external": "Liens seulement",
+
+    "w20.menu.sidebar.notifications": "Notifications",
+    "w20.menu.sidebar.notifications.filter": "Filtrer les notifications",
+    "w20.menu.sidebar.notifications.dismiss": "Effacer",
+    "w20.menu.sidebar.notifications.dismiss-all": "Effacer tout",
+    "w20.menu.sidebar.notifications.today": "Aujourd'hui",
+    "w20.menu.sidebar.notifications.expand": "Développer",
+    "w20.menu.sidebar.notifications.collapse": "Réduire"
+
+}

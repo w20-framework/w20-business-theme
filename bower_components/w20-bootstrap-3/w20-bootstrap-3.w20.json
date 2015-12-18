@@ -1,0 +1,44 @@
+{
+  "id": "w20-bootstrap-3",
+  "name": "W20 Bootstrap 3",
+  "description": "W20 bootstrap framework provider",
+  "modules": {
+    "css-framework": {
+      "path": "{w20-bootstrap-3}/modules/css-framework",
+      "autoload": true,
+      "configSchema": {
+        "title": "CSS Framework module configuration",
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  },
+  "requireConfig": {
+    "map": {
+      "*": {
+        "{css-framework}": "{w20-bootstrap-3}"
+      }
+    },
+    "paths": {
+      "{bootstrap}": "${components-path:bower_components}/bootstrap/dist",
+      "{angular-bootstrap}": "${components-path:bower_components}/angular-bootstrap",
+      "{font-awesome}": "${components-path:bower_components}/font-awesome"
+    },
+    "shim": {
+      "{bootstrap}/js/bootstrap": [
+        "jquery"
+      ],
+      "{angular-bootstrap}/ui-bootstrap-tpls": [
+        "{angular}/angular"
+      ]
+    }
+  },
+  "i18n": {
+    "en": [
+      "{w20-bootstrap-3}/i18n/messages-en.json"
+    ],
+    "fr": [
+      "{w20-bootstrap-3}/i18n/messages-fr.json"
+    ]
+  }
+}

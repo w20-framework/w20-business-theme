@@ -1,0 +1,38 @@
+{
+  "name": "jGrowl",
+  "version": "1.4.3",
+  "homepage": "https://github.com/stanlemon/jGrowl",
+  "authors": [
+    "Stan Lemon <stosh1985@gmail.com>"
+  ],
+  "description": "jGrowl is an unobtrusive notification system for web applications.",
+  "main": "jquery.jgrowl.js",
+  "keywords": [
+    "growl",
+    "jgrowl",
+    "jquery",
+    "toaster",
+    "notification",
+    "message"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.4"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.4.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.4.3",
+    "commit": "04af24ec8264e337737c4ff18b5710c16315152c"
+  },
+  "_source": "git://github.com/stanlemon/jGrowl.git",
+  "_target": "1.4.3",
+  "_originalSource": "jgrowl"
+}
