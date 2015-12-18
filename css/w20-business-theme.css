@@ -90,6 +90,193 @@ html .callout.callout-success {
 .bg-maroon {
   background-color: #d81b60 !important;
 }
+.bg-light-blue {
+  background-color: #3c8dbc !important;
+}
+.bg-red,
+html .callout.callout-danger {
+  background-color: #dd4b39 !important;
+}
+.bg-green,
+html .callout.callout-success {
+  background-color: #00a65a !important;
+}
+.bg-aqua {
+  background-color: #00c0ef !important;
+}
+.bg-yellow,
+html .callout.callout-warning {
+  background-color: #f39c12 !important;
+}
+.bg-blue,
+html .callout.callout-info {
+  background-color: #0073b7 !important;
+}
+.bg-navy {
+  background-color: #001f3f !important;
+}
+.bg-teal {
+  background-color: #39cccc !important;
+}
+.bg-olive {
+  background-color: #3d9970 !important;
+}
+.bg-lime {
+  background-color: #01ff70 !important;
+}
+.bg-orange {
+  background-color: #ff851b !important;
+}
+.bg-fuchsia {
+  background-color: #f012be !important;
+}
+.bg-purple {
+  background-color: #605ca8 !important;
+}
+.bg-maroon {
+  background-color: #d81b60 !important;
+}
+.bg-black {
+  background-color: #111111 !important;
+}
+.bg-anthracite {
+  background-color: #4d4d4d !important;
+}
+.bg-dark-grey {
+  background-color: #666666 !important;
+}
+.bg-storm {
+  background-color: #808080 !important;
+}
+.bg-grey {
+  background-color: #999999 !important;
+}
+.bg-small-grey {
+  background-color: #bababa !important;
+}
+.bg-medium-grey {
+  background-color: #b3b3b3 !important;
+}
+.bg-light-grey {
+  background-color: #cccccc !important;
+}
+.bg-pale-grey {
+  background-color: #dddddd !important;
+}
+.bg-ultralight-grey {
+  background-color: #efefef !important;
+}
+.bg-snow-white {
+  background-color: #f8f8f8 !important;
+}
+.bg-white {
+  background-color: #ffffff !important;
+}
+.bg-steel-blue {
+  background-color: #1b5daf !important;
+}
+.bg-medium-steel-blue {
+  background-color: #428bca !important;
+}
+.bg-light-steel-blue {
+  background-color: #72b0dd !important;
+}
+.bg-pale-steel-blue {
+  background-color: #9ccbe9 !important;
+}
+.bg-ultra-light-steel-blue {
+  background-color: #d9e8f4 !important;
+}
+.bg-cobalt-blue {
+  background-color: #335182 !important;
+}
+.bg-medium-cobalt-blue {
+  background-color: #6380a9 !important;
+}
+.bg-light-cobalt-blue {
+  background-color: #90a8c6 !important;
+}
+.bg-pale-cobalt-blue {
+  background-color: #c0cfe1 !important;
+}
+.bg-ultra-light-cobalt-blue {
+  background-color: #eaeff4 !important;
+}
+.bg-strawberry {
+  background-color: #c0392b !important;
+}
+.bg-medium-strawberry {
+  background-color: #d66958 !important;
+}
+.bg-light-strawberry {
+  background-color: #e59586 !important;
+}
+.bg-pale-strawberry {
+  background-color: #f2c3b9 !important;
+}
+.bg-ultra-light-strawberry {
+  background-color: #faebe8 !important;
+}
+.bg-apricot {
+  background-color: #e67e22 !important;
+}
+.bg-medium-apricot {
+  background-color: #efa64c !important;
+}
+.bg-light-apricot {
+  background-color: #f5c47b !important;
+}
+.bg-pale-apricot {
+  background-color: #fae0b1 !important;
+}
+.bg-ultra-light-apricot {
+  background-color: #fdf4df !important;
+}
+.bg-pea-green {
+  background-color: #45983e !important;
+}
+.bg-medium-pea-green {
+  background-color: #75ba6e !important;
+}
+.bg-light-pea-green {
+  background-color: #9fd299 !important;
+}
+.bg-pale-pea-green {
+  background-color: #c9e7c6 !important;
+}
+.bg-ultra-light-pea-green {
+  sbackground-color: #edf7ec !important;
+}
+.bg-turquoise {
+  background-color: #3da097 !important;
+}
+.bg-medium-turquoise {
+  background-color: #6dbfb9 !important;
+}
+.bg-light-turquoise {
+  background-color: #98d5d1 !important;
+}
+.bg-pale-turquoise {
+  background-color: #c5e9e7 !important;
+}
+.bg-ultra-light-turquoise {
+  background-color: #ecf7f6 !important;
+}
+.bg-blueberry {
+  background-color: #67408d !important;
+}
+.bg-medium-blueberry {
+  background-color: #9370b2 !important;
+}
+.bg-light-blueberry {
+  background-color: #b69bcc !important;
+}
+.bg-pale-blueberry {
+  background-color: #d7c7e4 !important;
+}
+.bg-ultra-light-blueberry {
+  background-color: #f1ecf5 !important;
+}
 @font-face {
   font-family: 'Collator';
   src: url('../fonts/collator/Collator-webfont.eot');
@@ -164,11 +351,29 @@ html {
 .w20-content h2,
 .w20-content h3,
 .w20-content h4,
-.w20-content h5,
-.w20-content h6 {
-  font-size: 18px;
-  font-weight: normal;
+.w20-content h5 {
+  font-family: 'Collator', arial, helvetica, sans-serif;
+  padding-bottom: 9px;
+}
+.w20-content h1 {
+  font-weight: bold;
   color: #666666;
+  font-size: 24px;
+}
+.w20-content h2 {
+  font-size: 22px;
+}
+.w20-content h3 {
+  font-size: 20px;
+}
+.w20-content h4 {
+  font-size: 18px;
+}
+.w20-content h5 {
+  font-size: 16px;
+}
+.w20-content h6 {
+  font-size: 14px;
 }
 .w20-content small {
   font-size: 14px;
@@ -256,6 +461,25 @@ html .btn-flashy {
 }
 html .btn-flashy:hover {
   background-color: #67408d;
+}
+html .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+html .btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
 }
 html input {
   border-color: #b3b3b3;
@@ -626,7 +850,7 @@ html .progress-description {
     height: 25px;
   }
   .w20bt-topbar-actions .topbar-action-separator {
-    border-left: 1px solid #bababa;
+    border-right: 1px solid #bababa;
   }
   .w20bt-topbar-actions .navbar-nav > li > a {
     padding: 2px 20px;

@@ -20,6 +20,10 @@
                             "width": {
                                 "description": "Width of the side menu",
                                 "type": "integer"
+                            },
+                            "show": {
+                                "description": "Whether to show the sidebar or not",
+                                "type": "boolean"
                             }
                         }
                     },

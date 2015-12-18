@@ -4,10 +4,10 @@
   font-family: 'Collator';
   src: url('../fonts/collator/Collator-webfont.eot');
   src: url('../fonts/collator/Collator-webfont.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/collator/Collator-webfont.woff2') format('woff2'),
-       url('../fonts/collator/Collator-webfont.woff') format('woff'),
-       url('../fonts/collator/Collator-webfont.ttf') format('truetype'),
-       url('../fonts/collator/Collator-webfont.svg#collatorregular') format('svg');
+  url('../fonts/collator/Collator-webfont.woff2') format('woff2'),
+  url('../fonts/collator/Collator-webfont.woff') format('woff'),
+  url('../fonts/collator/Collator-webfont.ttf') format('truetype'),
+  url('../fonts/collator/Collator-webfont.svg#collatorregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,15 +15,14 @@
 @font-face {
   font-family: 'Arimo';
   src: url('../fonts/arimo/Arimo-Regular.woff2') format('woff2'),
-       url('../fonts/arimo/Arimo-Regular.woff') format('woff'),
-       url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
+  url('../fonts/arimo/Arimo-Regular.woff') format('woff'),
+  url('../fonts/arimo/Arimo-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 // Remove the @font-face for Arimo and uncomment the line below to serve Arimo fonts from Google CDN instead (loads faster)
 // @import url(http://fonts.googleapis.com/css?family=Arimo);
-
 
 // Theme typographic classes
 // --------------------------------------------------
@@ -89,7 +88,6 @@
   font-size: 15px;
 }
 
-
 // Theme
 // --------------------------------------------------
 
@@ -101,8 +99,34 @@ html {
   .w20bt-text();
   .w20bt-text--main();
 
-  h1, h2, h3, h4, h5, h6 {
-    .w20bt-text--subtitle();
+  h1, h2, h3, h4, h5 {
+    .w20bt-title();
+    padding-bottom: 9px;
+  }
+
+  h1 {
+
+    .w20bt-title--page();
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 16px;
+  }
+  h6 {
+    font-size: 14px;
   }
 
   small {

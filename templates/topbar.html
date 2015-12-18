@@ -38,7 +38,7 @@
                                 data-ng-init="action = navAction(navActionName)">
                             </li>
                             <li data-ng-repeat-end
-                                data-ng-if="$middle && navAction(navActionName).showFn()"
+                                data-ng-if="navAction(navActionName).showFn()"
                                 class="topbar-action-separator">
                             </li>
                         </ul>
