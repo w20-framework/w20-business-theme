@@ -1,6 +1,6 @@
 {
     "name": "w20-business-theme",
-    "version": "1.0.0-M2",
+    "version": "1.1.0",
     "description": "W20 Business Theme",
     "main": "gruntfile.js",
     "repository": {
