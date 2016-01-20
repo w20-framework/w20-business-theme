@@ -1,6 +1,8 @@
-# W20 business theme 
-[![Build status](https://travis-ci.org/seedstack/w20-business-theme.svg?branch=master)](https://travis-ci.org/seedstack/w20-business-theme)
+# W20 business theme [![Build status](https://travis-ci.org/seedstack/w20-business-theme.svg?branch=master)](https://travis-ci.org/seedstack/w20-business-theme)
 
-W20 business-oriented theme
+W20 business applications theme.
 
-Implementation of [PEP 001](https://github.com/seedstack/project-enhancement-proposals/blob/master/pep-001-w20-business-theme.md)
+# Copyright and license
+
+This source code is copyrighted by [The SeedStack Authors](https://github.com/seedstack/seedstack/blob/master/AUTHORS) and
+released under the terms of the [Mozilla Public License 2.0](https://www.mozilla.org/MPL/2.0/).
