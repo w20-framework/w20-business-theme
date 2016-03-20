@@ -1,3 +1,7 @@
+# Version 1.1.4 (?)
+
+* [chg] Update for SeedStack 16.4
+
 # Version 1.1.3 (2016-01-21)
 
 * [chg] Update bower.json to accept latest minor versions of dependencies (^).
