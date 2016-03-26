@@ -160,6 +160,7 @@ define([
                 }
             }
 
+            $scope.homePath = $location.$$absUrl;
             $scope.routes = $route.routes;
             $scope.filteredRoutes = [];
             $scope.menuTree = navigationService.routeTree;

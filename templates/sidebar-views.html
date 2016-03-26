@@ -3,7 +3,7 @@
         <!-- home route -->
         <li class="menu-route single-route">
             <div data-ng-class="{'active-route': activeRoutePath() === '/'}" data-ng-style="{'border-color': brandColor}">
-                <a data-ng-href="#!/">
+                <a data-ng-href="{{ homePath }}">
                     <i class="fa fa-home"></i>
                     {{ 'w20.menu.sidebar.home' | localize | uppercase }}
                 </a>
@@ -43,7 +43,7 @@
 
             <!-- leaf route of nested categories -->
             <div data-ng-if="subTree.path" class="menu-route">
-                <a data-ng-href="#!{{ subTree.path }}"
+                <a data-ng-href="{{ subTree.path }}"
                    target="{{ subTree.target || '_self' }}"
                    data-ng-bind-html="displayName(subTree)">
                 </a>
