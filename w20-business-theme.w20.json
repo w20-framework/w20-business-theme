@@ -69,10 +69,6 @@
                             }
                         }
                     },
-                    "logoUrl": {
-                        "description": "URL for the top bar logo link",
-                        "type": "string"
-                    },
                     "links": {
                         "description": "Links to show directly in the top bar (up to 10 links)",
                         "type": "array",
