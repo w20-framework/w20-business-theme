@@ -39,16 +39,11 @@ You can also add them to your `bower.json` file. Check for the latest release [h
 
 ## Using the [Bridge addon](http://seedstack.org/addons/w20-bridge/)
 
-If the frontend files are served from resource JARs, the theme dependencies are added in the following way
-in your Web module:
+If the frontend files are served from resource JARs, the W20-bridge add-on packages this theme in the following artifact:
 
-### Bootstrap 3 fragment
+{{< dependency g="org.seedstack.addons.w20" a="w20-bridge-web-business-theme" >}}
 
-{{< dependency g="org.seedstack.addons.w20" a="w20-bridge-web-bootstrap-3" v="[insert version]">}}
-
-### Theme fragment 
-
-{{< dependency g="org.seedstack.addons.w20" a="w20-bridge-web-business-theme" v="[insert version]">}}
+Simply add it to your project `pom.xml`.
 
 # Configuration
 
