@@ -24,8 +24,6 @@
                     </div>
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-menu">
-                    <a class="logo" data-ng-href="{{logoUrl}}" data-tooltip="{{ logoUrl }}"
-                       data-tooltip-placement="bottom"></a>
                     <div class="w20bt-topbar-actions">
                         <ul class="nav navbar-nav">
                             <li class="w20bt-sidemenu-toggler" data-ng-click="toggleSidebar()">
@@ -42,6 +40,12 @@
                                 class="topbar-action-separator">
                             </li>
                         </ul>
+                        <div class="logo" data-ng-if="logo.image">
+                            <span class="logo-helper"></span>
+                            <a data-ng-href="{{ logo.link }}" data-uib-tooltip="{{ logo.tooltip || logo.link  || '' }}" data-tooltip-placement="left" target="{{ logo.target || '_self' }}">
+                                <img data-ng-src="{{ logo.image }}" alt="logo">
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

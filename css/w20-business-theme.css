@@ -245,7 +245,7 @@ html .callout.callout-info {
   background-color: #c9e7c6 !important;
 }
 .bg-ultra-light-pea-green {
-  sbackground-color: #edf7ec !important;
+  background-color: #edf7ec !important;
 }
 .bg-turquoise {
   background-color: #3da097 !important;
@@ -824,6 +824,19 @@ html .progress-description {
 .w20-topbar .w20bt-topbar-actions {
   height: 60px;
   border-bottom: 1px solid #dddddd;
+}
+.w20-topbar .logo {
+  float: right;
+  margin-right: 20px;
+  height: 100%;
+}
+.w20-topbar .logo .logo-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.w20-topbar .logo img {
+  vertical-align: middle;
 }
 @media (min-width: 768px) and (max-width: 980px) {
   .w20bt-sidemenu-toggler--small {

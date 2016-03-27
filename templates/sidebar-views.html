@@ -43,7 +43,7 @@
 
             <!-- leaf route of nested categories -->
             <div data-ng-if="subTree.path" class="menu-route">
-                <a data-ng-href="{{ subTree.path }}"
+                <a data-ng-href="{{ linkPrefix + subTree.path }}"
                    target="{{ subTree.target || '_self' }}"
                    data-ng-bind-html="displayName(subTree)">
                 </a>

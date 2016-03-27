@@ -46,6 +46,29 @@
                             }
                         }
                     },
+                    "logo": {
+                        "title": "Logo definition",
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "image": {
+                                "description": "The URL of the image",
+                                "type": "string"
+                            },
+                            "link": {
+                                "description": "The URL of the logo link",
+                                "type": "string"
+                            },
+                            "tooltip": {
+                                "description": "The text of the logo tooltip",
+                                "type": "string"
+                            },
+                            "target": {
+                                "description": "The target for the logo link",
+                                "type": "string"
+                            }
+                        }
+                    },
                     "logoUrl": {
                         "description": "URL for the top bar logo link",
                         "type": "string"

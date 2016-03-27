@@ -38,25 +38,12 @@ define([
             restrict: 'A',
             scope: true,
             link: function (scope, iElement, iAttrs) {
-
-                //debug
-
-                scope.tests = [
-                    { name: 'toto1', surname: 'tata1 '},
-                    { name: 'toto2', surname: 'tata2 '},
-                    { name: 'toto3', surname: 'tata3 '},
-                    { name: 'toto4', surname: 'tata4 '}
-                ];
-
-                //end debug
-
-
                 scope.navActions = menuService.getActions;
                 scope.navAction = menuService.getAction;
                 scope.envtype = environmentService.environment;
                 scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
                 scope.description = iAttrs.subtitle || '';
-                scope.logoUrl = _config.logoUrl;
+                scope.logo = _config.logo;
                 scope.brandFixedWidth = true;
                 if (_config.brand) {
                     scope.brandFixedWidth = _config.brand.fixedWidth === false ? _config.brand.fixedWidth : true;
@@ -160,6 +147,7 @@ define([
                 }
             }
 
+            $scope.linkPrefix = $location.$$html5 ? '' : '#!';
             $scope.homePath = $location.$$absUrl;
             $scope.routes = $route.routes;
             $scope.filteredRoutes = [];
