@@ -1,10 +1,14 @@
 ---
-title: "Overview"
-theme: "Business theme"
+title: "Basics"
+name: "Business"
 repo: "https://github.com/seedstack/w20-business-theme"
 author: "SeedStack"
 description: "W20 theme for enterprise business applications."
 min-version: "15.7+"
+weight: -1
+image: screenshot-01.png
+zones:
+    - Themes
 menu:
     BusinessTheme:
         weight: 10
