@@ -83,6 +83,11 @@ Options can be declared in the `main` module configuration.
 * `hideConnectivity`: (Boolean) Hide the connectivity status.
 * `hideCulture`: (Boolean) Hide the culture dropdown.
 * `hideSecurity`: (Boolean) Hide the authentication action.
+* `logo`: (Object) Options for the topbar logo
+    * `ìmage`: (String) url of the logo image
+    * `url`: (String) url of the logo link
+    * `target`: (String) target of the logo link (defaults to _self)
+    * `tooltip`: (String) text of the logo tooltip (defaults to the `url` attribute)
     
 ## Sidebar routes
 
@@ -149,9 +154,7 @@ This register an action of name 'action' of type 'my-action-type'. The last para
 object which will extend the default one you provided in the action type registration. Use
 the `sortKey` attribute to order your actions display.
 
-## Components
-
-### Background colors
+## Background colors
 
 These background classes can be used to style background. Text color will be set appropriately to
 contrast with them.
@@ -174,7 +177,7 @@ contrast with them.
 *  {{% colors "#605CA8" %}} .bg-purple
 *  {{% colors "#D81B60" %}} .bg-maroon
 
-### Infobox
+## Infobox
 
 Infobox are components that display information associated with an icon.
 
@@ -192,7 +195,7 @@ Infobox are components that display information associated with an icon.
 </div>
 ```
 
-### Callout
+## Callout
 
 Callout can be used as an alternative to Bootstrap `alert` to carry visual emphasis.
 
