@@ -3,7 +3,7 @@
         <!-- home route -->
         <li class="menu-route single-route">
             <div data-ng-class="{'active-route': activeRoutePath() === '/'}" data-ng-style="{'border-color': brandColor}">
-                <a data-ng-href="{{ homePath }}">
+                <a data-ng-href="{{ linkPrefix + '/' }}">
                     <i class="fa fa-home"></i>
                     {{ 'w20.menu.sidebar.home' | localize | uppercase }}
                 </a>

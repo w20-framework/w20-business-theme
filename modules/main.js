@@ -148,7 +148,6 @@ define([
             }
 
             $scope.linkPrefix = $location.$$html5 ? '' : '#!';
-            $scope.homePath = $location.$$absUrl;
             $scope.routes = $route.routes;
             $scope.filteredRoutes = [];
             $scope.menuTree = navigationService.routeTree;
