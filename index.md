@@ -1,12 +1,13 @@
 ---
 title: "Basics"
-name: "Business"
+name: "Business theme"
 repo: "https://github.com/seedstack/w20-business-theme"
-author: "SeedStack"
+author: "Kavi RAMYEAD"
 description: "W20 theme for enterprise business applications."
-min-version: "15.7+"
+min-version: "16.4+"
 weight: -1
 image: screenshot-01.png
+date: 2015-07-28
 zones:
     - Themes
 menu:
@@ -25,19 +26,16 @@ Running demo available [here](http://seedstack.org/w20-business-theme).
 
 # Installation
 
-Two fragments are required: `w20-bootstrap-3` and `w20-business-theme`. You can install them
-through bower if you are developing a stand alone front end or you can use the front-back integration bridge to serve
+You can install the theme through bower if you are developing a stand alone front end or you can use the W20 integration bridge to serve
 the required dependencies through dedicated JARs.
 
 ## Bower
 
 ```
-$ bower install w20-bootstrap-3 w20-business-theme
+$ bower install w20-business-theme --save
 ```
 
-You can also add them to your `bower.json` file. Check for the latest release [here](https://github.com/seedstack/w20-business-theme/releases).
-
-## Using the [Bridge addon](http://seedstack.org/addons/w20-bridge/)
+## Using the [W20 bridge addon](http://seedstack.org/addons/w20-bridge/)
 
 If the frontend files are served from resource JARs, the W20-bridge add-on packages this theme in the following artifact:
 
