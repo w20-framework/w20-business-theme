@@ -2,9 +2,9 @@
 title: "Basics"
 name: "Business theme"
 repo: "https://github.com/seedstack/w20-business-theme"
+date: 2016-01-20
 author: "Kavi RAMYEAD"
 description: "W20 theme for enterprise business applications."
-min-version: "16.4+"
 weight: -1
 image: screenshot-01.png
 date: 2015-07-28
