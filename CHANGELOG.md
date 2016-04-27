@@ -1,4 +1,4 @@
-# Version 1.2.0 (?)
+# Version 1.2.0 (2016-04-27)
 
 * [new] Add logo support in the top bar.
 * [chg] Update for SeedStack 16.4
