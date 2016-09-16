@@ -91,10 +91,6 @@ define([
                         return name ? menuService.getSection(name) : null;
                     };
 
-                    scope.goTo = function(path) {
-                        $location.path(path);
-                    };
-
                     eventService.on('SidebarToggleEvent', function() {
                         showSidebar = !showSidebar;
                         previousSidebarState = showSidebar;

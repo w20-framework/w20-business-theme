@@ -1,3 +1,7 @@
+# Version 1.2.1 (2016-09-16)
+
+* [fix] Fix topbar and menu links which were reloading the whole application when in HTML5 mode.
+
 # Version 1.2.0 (2016-04-27)
 
 * [new] Add logo support in the top bar.

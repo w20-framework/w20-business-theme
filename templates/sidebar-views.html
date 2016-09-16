@@ -10,9 +10,9 @@
             </div>
         </li>
         <!-- route without categories -->
-        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" data-ng-click="goTo(route.path)" class="menu-route single-route">
+        <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" class="menu-route single-route">
             <div class="route-wrapper" data-ng-class="{'active-route': activeRoutePath() === route.path}" data-ng-style="{'border-color': brandColor}">
-                <a target="{{ route.target || '_self' }}" data-ng-bind-html="displayName(route)"></a>
+                <a data-ng-href="{{ linkPrefix + route.path }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a>
             </div>
         </li>
         <!-- route in categories -->
@@ -44,7 +44,7 @@
             <!-- leaf route of nested categories -->
             <div data-ng-if="subTree.path" class="menu-route">
                 <a data-ng-href="{{ linkPrefix + subTree.path }}"
-                   target="{{ subTree.target || '_self' }}"
+                   target="{{ subTree.target }}"
                    data-ng-bind-html="displayName(subTree)">
                 </a>
             </div>
