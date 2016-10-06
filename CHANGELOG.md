@@ -1,3 +1,7 @@
+# Version 1.2.2 (2016-10-06)
+
+* [fix] Fix topbar and menu links when application has a non-empty base href.
+
 # Version 1.2.1 (2016-09-16)
 
 * [fix] Fix topbar and menu links which were reloading the whole application when in HTML5 mode.

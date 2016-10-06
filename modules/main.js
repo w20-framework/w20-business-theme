@@ -22,7 +22,7 @@ define([
     '{w20-core}/modules/notifications',
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils'
-], function(require, module, $, _, angular, topbarTemplate, sidebarTemplate) {
+], function (require, module, $, _, angular, topbarTemplate, sidebarTemplate) {
     'use strict';
 
     var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20CoreUI', 'w20CoreNotifications', 'ngSanitize']),
@@ -30,41 +30,42 @@ define([
         showTopbar = true,
         showSidebar = _config.sidebar && typeof _config.sidebar.show == 'boolean' ? _config.show : true;
 
-    w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EventService', 'EnvironmentService', 'DisplayService', 'MenuService',
-        function (applicationService, eventService, environmentService, displayService, menuService) {
-        return {
-            template: topbarTemplate,
-            replace: true,
-            restrict: 'A',
-            scope: true,
-            link: function (scope, iElement, iAttrs) {
-                scope.navActions = menuService.getActions;
-                scope.navAction = menuService.getAction;
-                scope.envtype = environmentService.environment;
-                scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
-                scope.description = iAttrs.subtitle || '';
-                scope.logo = _config.logo;
-                scope.brandFixedWidth = true;
-                if (_config.brand) {
-                    scope.brandFixedWidth = _config.brand.fixedWidth === false ? _config.brand.fixedWidth : true;
-                    scope.brandBackgroundColor = _config.brand.backgroundColor ?  _config.brand.backgroundColor : undefined;
-                    scope.brandTextColor = _config.brand.textColor ?  _config.brand.textColor : undefined;
+    w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EventService', 'EnvironmentService', 'DisplayService', 'MenuService', 'NavigationService',
+        function (applicationService, eventService, environmentService, displayService, menuService, navigationService) {
+            return {
+                template: topbarTemplate,
+                replace: true,
+                restrict: 'A',
+                scope: true,
+                link: function (scope, iElement, iAttrs) {
+                    scope.navActions = menuService.getActions;
+                    scope.navAction = menuService.getAction;
+                    scope.envtype = environmentService.environment;
+                    scope.buildLink = navigationService.buildLink;
+                    scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
+                    scope.description = iAttrs.subtitle || '';
+                    scope.logo = _config.logo;
+                    scope.brandFixedWidth = true;
+                    if (_config.brand) {
+                        scope.brandFixedWidth = _config.brand.fixedWidth === false ? _config.brand.fixedWidth : true;
+                        scope.brandBackgroundColor = _config.brand.backgroundColor ? _config.brand.backgroundColor : undefined;
+                        scope.brandTextColor = _config.brand.textColor ? _config.brand.textColor : undefined;
+                    }
+
+                    scope.showTopbar = function () {
+                        return showTopbar;
+                    };
+
+                    scope.toggleSidebar = function () {
+                        eventService.emit('SidebarToggleEvent');
+                    };
+
+                    displayService.registerContentShiftCallback(function () {
+                        return [showTopbar ? 50 : 0, 0, 0, 0];
+                    });
                 }
-
-                scope.showTopbar = function () {
-                    return showTopbar;
-                };
-
-                scope.toggleSidebar = function() {
-                    eventService.emit('SidebarToggleEvent');
-                };
-
-                displayService.registerContentShiftCallback(function () {
-                    return [showTopbar ? 50 : 0, 0, 0, 0];
-                });
-            }
-        };
-    }]);
+            };
+        }]);
 
     w20BusinessTheme.directive('w20Sidebar', ['EventService', 'DisplayService', 'NavigationService', 'MenuService', '$location', '$window',
         function (eventService, displayService, navigationService, menuService, $location, $window) {
@@ -91,7 +92,7 @@ define([
                         return name ? menuService.getSection(name) : null;
                     };
 
-                    eventService.on('SidebarToggleEvent', function() {
+                    eventService.on('SidebarToggleEvent', function () {
                         showSidebar = !showSidebar;
                         previousSidebarState = showSidebar;
                         displayService.computeContentShift();
@@ -108,18 +109,19 @@ define([
                     });
                 }
             };
-    }]);
+        }]);
 
-    w20BusinessTheme.filter('routeFilter', ['CultureService', 'SecurityExpressionService', function(cultureService, securityExpressionService) {
+    w20BusinessTheme.filter('routeFilter', ['CultureService', 'SecurityExpressionService', function (cultureService, securityExpressionService) {
         function isRouteVisible(route) {
             return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
         }
-        return function(routes, expected) {
+
+        return function (routes, expected) {
             if (!expected) {
                 return;
             }
-            return _.filter(routes, function(route) {
-                if(isRouteVisible(route) && cultureService.displayName(route).toLowerCase().indexOf(expected.toLowerCase()) !== -1) {
+            return _.filter(routes, function (route) {
+                if (isRouteVisible(route) && cultureService.displayName(route).toLowerCase().indexOf(expected.toLowerCase()) !== -1) {
                     return route;
                 }
             });
@@ -143,7 +145,6 @@ define([
                 }
             }
 
-            $scope.linkPrefix = $location.$$html5 ? '' : '#!';
             $scope.routes = $route.routes;
             $scope.filteredRoutes = [];
             $scope.menuTree = navigationService.routeTree;
@@ -152,13 +153,14 @@ define([
             $scope.topLevelRoutes = navigationService.topLevelRoutes;
             $scope.routesFromCategory = navigationService.routesFromCategory;
             $scope.displayName = cultureService.displayName;
+            $scope.buildLink = navigationService.buildLink;
 
             if (_config.brand) {
-                $scope.brandColor =  _config.brand.backgroundColor ? _config.brand.backgroundColor : undefined;
+                $scope.brandColor = _config.brand.backgroundColor ? _config.brand.backgroundColor : undefined;
             }
 
-            $scope.activeRoutePath = function() {
-               return $location.path();
+            $scope.activeRoutePath = function () {
+                return $location.path();
             };
 
             $scope.localizeCategory = function (categoryName) {
@@ -236,8 +238,8 @@ define([
 
             if (!_config.hideCulture) {
                 menuService.addAction('culture', 'w20-culture', {
-                sortKey: 300
-            });
+                    sortKey: 300
+                });
             }
 
             _.each(_config.links, function (link, idx) {

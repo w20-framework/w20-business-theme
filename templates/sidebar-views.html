@@ -2,8 +2,8 @@
     <ul class="sidebar-list">
         <!-- home route -->
         <li class="menu-route single-route">
-            <div data-ng-class="{'active-route': activeRoutePath() === '/'}" data-ng-style="{'border-color': brandColor}">
-                <a data-ng-href="{{ linkPrefix + '/' }}">
+            <div data-ng-class="{'active-route': activeRoutePath() === '/' || activeRoutePath() === ''}" data-ng-style="{'border-color': brandColor}">
+                <a data-ng-href="{{ buildLink('/') }}">
                     <i class="fa fa-home"></i>
                     {{ 'w20.menu.sidebar.home' | localize | uppercase }}
                 </a>
@@ -12,7 +12,7 @@
         <!-- route without categories -->
         <li data-ng-repeat="route in topLevelRoutes() | orderBy:routeSortKey" class="menu-route single-route">
             <div class="route-wrapper" data-ng-class="{'active-route': activeRoutePath() === route.path}" data-ng-style="{'border-color': brandColor}">
-                <a data-ng-href="{{ linkPrefix + route.path }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a>
+                <a data-ng-href="{{ buildLink(route.path) }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a>
             </div>
         </li>
         <!-- route in categories -->
@@ -43,7 +43,7 @@
 
             <!-- leaf route of nested categories -->
             <div data-ng-if="subTree.path" class="menu-route">
-                <a data-ng-href="{{ linkPrefix + subTree.path }}"
+                <a data-ng-href="{{ buildLink(subTree.path) }}"
                    target="{{ subTree.target }}"
                    data-ng-bind-html="displayName(subTree)">
                 </a>
