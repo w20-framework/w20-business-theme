@@ -926,6 +926,7 @@ html .progress-description {
   left: 0;
   top: 100px;
   height: 100%;
+  z-index: 1030;
 }
 .w20bt-sidebar-views {
   overflow-y: auto;
