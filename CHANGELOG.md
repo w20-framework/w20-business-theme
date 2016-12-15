@@ -1,3 +1,7 @@
+# Version 1.2.3 (2016-12-15)
+
+* [fix] Sets the z-index of the sidebar to match bs3 fixed navbar.
+
 # Version 1.2.2 (2016-10-06)
 
 * [fix] Fix topbar and menu links when application has a non-empty base href.
