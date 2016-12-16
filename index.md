@@ -79,7 +79,7 @@ Options can be declared in the `main` module configuration.
 * `hideSecurity`: (Boolean) Hide the authentication action.
 * `logo`: (Object) Options for the topbar logo
     * `ìmage`: (String) url of the logo image
-    * `url`: (String) url of the logo link
+    * `link`: (String) url of the logo link
     * `target`: (String) target of the logo link (defaults to _self)
     * `tooltip`: (String) text of the logo tooltip (defaults to the `url` attribute)
     
