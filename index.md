@@ -5,7 +5,7 @@ repo: "https://github.com/seedstack/w20-business-theme"
 date: 2016-01-20
 author: "Kavi RAMYEAD"
 description: "W20 theme for enterprise business applications."
-demo: "http://seedstack.org/w20-business-theme"
+demo: "http://w20-framework.github.io/w20-business-theme"
 weight: -1
 image: screenshot-01.png
 date: 2015-07-28
