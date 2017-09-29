@@ -27,8 +27,14 @@ module.exports = function(grunt) {
                     nospawn: true
                 }
             }
-        }
+        },
+        jshint: {
+            business: {
+                src: ['modules/**/*.js']
+            }
+        },
     });
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    grunt.registerTask('default', ['less']);
+    grunt.registerTask('default', ['less','jshint']);
 };
