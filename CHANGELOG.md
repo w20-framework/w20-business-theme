@@ -1,3 +1,9 @@
+# Version 1.3.0 (2018-03-21)
+
+* [brk] Switched from Bower to NPM package manager
+* [chg] Update W20 to ^2.4.0
+* [chg] Update W20 Bootstrap 3 to ^2.3.0
+
 # Version 1.2.3 (2016-12-15)
 
 * [fix] Sets the z-index of the sidebar to match bs3 fixed navbar.

@@ -1,33 +1,34 @@
 {
-    "name": "w20-business-theme",
-    "version": "1.3.0-rc.3",
-    "description": "W20 Business Theme",
-    "main": "gruntfile.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/seedstack/w20-business-theme.git"
-    },
-    "keywords": [
-        "w20",
-        "theme"
-    ],
-    "author": "Kavi Ramyead",
-    "license": "Mozilla Public License, version 2.0",
-    "bugs": {
-        "url": "https://github.com/seedstack/w20-business-theme/issues"
-    },
-    "scripts": {
-        "test": ""
-    },
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-less": "~1.0.0",
-        "grunt-contrib-watch": "~0.6.1",
-        "grunt-contrib-jshint": "~1.1.0",
-        "jit-grunt": "~0.9.1"
-    },
-    "dependencies": {
-        "w20": "~2.4.0-rc",
-        "w20-bootstrap-3": "~2.3.0-rc"
-    }
+  "name": "@w20/w20-business-theme",
+  "version": "1.3.0",
+  "description": "W20 Business Theme",
+  "license": "MPL-2.0",
+  "keywords": [
+    "w20",
+    "theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/seedstack/w20-business-theme/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-jshint": "~1.1.0",
+    "jit-grunt": "~0.9.1"
+  },
+  "dependencies": {
+    "@w20/w20": "^2.4.0",
+    "@w20/w20-bootstrap-3": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w20-framework/w20-business-theme.git"
+  },
+  "author": "W20 team",
+  "contributors": [
+    "Adrien LAUER <adrien.lauer@mpsa.com>",
+    "Kavi RAMYEAD <kavi.ramyead@ext.mpsa.com>",
+    "Jose Manuel MARTINEZ LAINEZ <josemanuel.martinez1@ext.mpsa.com>"
+  ]
 }
