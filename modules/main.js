@@ -28,7 +28,8 @@ define([
     var w20BusinessTheme = angular.module('w20BusinessTheme', ['w20CoreCulture', 'w20CoreUtils', 'w20CoreUI', 'w20CoreNotifications', 'ngSanitize']),
         _config = module && module.config() || {},
         showTopbar = true,
-        showSidebar = _config.sidebar && typeof _config.sidebar.show == 'boolean' ? _config.show : true;
+        showSidebar = _config.sidebar && typeof _config.sidebar.show === 'boolean' ? _config.show : true,
+        includes = _.contains || _.includes;
 
     w20BusinessTheme.directive('w20Topbar', ['ApplicationService', 'EventService', 'EnvironmentService', 'DisplayService', 'MenuService', 'NavigationService',
         function (applicationService, eventService, environmentService, displayService, menuService, navigationService) {
@@ -181,7 +182,7 @@ define([
             };
 
             $scope.isOpened = function (categoryName) {
-                return _.contains(openedCategories, categoryName);
+                return includes(openedCategories, categoryName);
             };
 
             $scope.routeSortKey = function (route) {
