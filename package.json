@@ -24,7 +24,7 @@
   },
   "scripts": {
     "prepare": "grunt",
-    "test": ""
+    "test": "echo sorry, no test to run"
   },
   "repository": {
     "type": "git",
