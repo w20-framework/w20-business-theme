@@ -32,7 +32,7 @@ module.exports = function(grunt) {
             business: {
                 src: ['modules/**/*.js']
             }
-        },
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
