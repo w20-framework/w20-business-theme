@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@groupe-psa/psa-business-theme@~1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@groupe-psa/psa-business-theme/-/psa-business-theme-1.0.0.tgz#c2d0537ecc07727b2755e4479fa23190458a6cee"
+"@groupe-psa/psa-business-theme@~1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@groupe-psa/psa-business-theme/-/psa-business-theme-1.0.1.tgz#8888abbbc4ebcc7594981af3fc5ab6c8466a586f"
 
 "@w20/w20-bootstrap-3@^2.3.0":
   version "2.3.0"

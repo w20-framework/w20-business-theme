@@ -14,7 +14,7 @@
     "grunt": "~0.4.5",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-jshint": "~1.1.0",
-    "@groupe-psa/psa-business-theme": "~1.0.0"
+    "@groupe-psa/psa-business-theme": "~1.0.1"
   },
   "dependencies": {
     "@w20/w20": "^2.4.2",
