@@ -43,7 +43,7 @@
                         <div class="logo" data-ng-if="logo.image">
                             <span class="logo-helper"></span>
                             <a data-ng-href="{{ buildLink(logo.link) }}" data-uib-tooltip="{{ logo.tooltip || logo.link  || '' }}" data-tooltip-placement="left" target="{{ logo.target }}">
-                                <img data-ng-src="{{ logo.image }}" alt="logo">
+                                <img data-ng-src="{{ logo.image | path }}" alt="logo">
                             </a>
                         </div>
                     </div>
