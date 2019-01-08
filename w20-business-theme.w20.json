@@ -123,17 +123,17 @@
             }
         },
         "style": {
-            "path": "[css]!{w20-business-theme}/css/w20-business-theme.css",
-            "autoload": true
-        },
-        "elegant-icon-font": {
-            "path": "[css]!{w20-business-theme}/css/elegant-icons-font.css",
+            "path": "[css]!{psa-business-theme}/psa-business-theme.css",
             "autoload": true
         }
     },
-
     "i18n": {
         "en": [ "{w20-business-theme}/i18n/messages-en.json" ],
         "fr": [ "{w20-business-theme}/i18n/messages-fr.json" ]
+    },
+    "requireConfig": {
+        "paths": {
+            "{psa-business-theme}": "${components-path:node_modules}/@groupe-psa/psa-business-theme"
+        }
     }
 }

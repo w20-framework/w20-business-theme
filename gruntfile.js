@@ -6,28 +6,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
 
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     'use strict';
-
-    require('jit-grunt')(grunt);
-
     grunt.initConfig({
-        less: {
-            production: {
-                files: {
-                    'css/w20-business-theme.css': 'less/main.less'
-                }
-            }
-        },
-        watch: {
-            styles: {
-                files: ['less/*.less'],
-                tasks: ['less'],
-                options: {
-                    nospawn: true
-                }
-            }
-        },
         jshint: {
             business: {
                 src: ['modules/**/*.js']
@@ -35,6 +16,5 @@ module.exports = function(grunt) {
         }
     });
     grunt.loadNpmTasks('grunt-contrib-jshint');
-
-    grunt.registerTask('default', ['less','jshint']);
+    grunt.registerTask('default', ['jshint']);
 };

@@ -1,3 +1,7 @@
+# Version 1.3.2 (2018-07-18)
+
+* [chg] Now uses the style from `@groupe-psa/psa-business-theme`.
+
 # Version 1.3.1 (2018-07-18)
 
 * [fix] Fix incompatibility with W20 2.4.2

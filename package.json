@@ -1,6 +1,6 @@
 {
   "name": "@w20/w20-business-theme",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "W20 Business Theme",
   "license": "MPL-2.0",
   "keywords": [
@@ -13,10 +13,8 @@
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-cli": "^1.2.0",
-    "grunt-contrib-less": "~1.0.0",
-    "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-jshint": "~1.1.0",
-    "jit-grunt": "~0.9.1"
+    "@groupe-psa/psa-business-theme": "~1.0.0"
   },
   "dependencies": {
     "@w20/w20": "^2.4.2",
