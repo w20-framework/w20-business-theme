@@ -1,3 +1,7 @@
+# Version 1.3.4 (2018-07-18)
+
+* [chg] Update `psa-business-theme`.
+
 # Version 1.3.3 (2018-07-18)
 
 * [fix] Fix dependency to `psa-business-theme`.
