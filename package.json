@@ -11,7 +11,7 @@
     "url": "https://github.com/seedstack/w20-business-theme/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.5",
+    "grunt": "~1.5.2",
     "grunt-cli": "^1.2.0",
     "grunt-contrib-jshint": "~1.1.0"
   },
