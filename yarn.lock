@@ -414,8 +414,8 @@ jgrowl@^1.4.6:
   resolved "https://registry.yarnpkg.com/jgrowl/-/jgrowl-1.4.6.tgz#2736e332aaee73ccf0a14a5f0066391a0a13f4a3"
 
 jquery@^3.0.0:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.4.tgz#ba065c188142100be4833699852bf7c24dc0252f"
 
 js-yaml@~2.0.5:
   version "2.0.5"
